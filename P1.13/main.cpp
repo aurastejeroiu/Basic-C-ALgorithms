@@ -2,18 +2,18 @@
 
 using namespace std;
 
-//P1.13 Se da o zi sub forma datei (z,l,a) dintr-un an.
-//      Se cere  sa se  determine a cata zi din acel an este aceasta zi.
+///P1.13 Se da o zi sub forma datei (corecta) (Z,L,A) dintr-un an.
+///      Se cere  sa se  determine a cata zi din acel an este aceasta zi.
 
-//Idee: se aduna numarul de zile al fiecarei luni mai mici ca l cu z.
+///Idee: se aduna numarul de zile al fiecarei luni mai mici ca L cu Z.
 
-int Ordinal(int z, int l, int a){
-    int luni[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
-    if(a%4==0) luni[2]=29;
+int Ordinal(int Z, int L, int A){
+    int Luni[]={0,31,28,31,30,31,30,31,31,30,31,30};///pentru decembrie nu trebuie retinut
+    if(A%4==0) Luni[2]=29;
     int Ord=0;
-    for(int i=1;i<l;i++)
-        Ord+=luni[i];
-    Ord+=z;
+    for(int i=1;i<L;i++)
+        Ord+=Luni[i];
+    Ord+=Z;
     return Ord;
 }
 

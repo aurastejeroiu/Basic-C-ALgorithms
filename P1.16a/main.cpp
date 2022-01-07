@@ -9,6 +9,6 @@ int main()
    cin >> incep;
    cout<< " da nr de ordine (din an) al zilei  curente :";
    cin >> curent;
-   cout<< Zile[(curent+1-incep)%7];
+   cout<< Zile[(curent-1+incep)%7];
    return 0;
 }

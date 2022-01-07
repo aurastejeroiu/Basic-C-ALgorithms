@@ -1,12 +1,12 @@
 #include <iostream>
 
 using namespace std;
-//P1.12. Se dau numerele z,l,a naturale Sa se determine a data tripletul (z,l,a) reprezinta o data
-//       calendaristica a secolului nostru.
+///P1.12. Se dau numerele z,l,a naturale Sa se determine daca tripletul (z,l,a) reprezinta o data
+///       calendaristica a secolului nostru.
 
 
-//Idee:  Se verifica fiecare componenta a fie in plaja de valori corecta
-//       al datei curente
+///Idee:  Se verifica fiecare componenta sa fie in plaja de valori corecta
+///       a datei curente
 
 void Citire(string Sir, int& Z,int& L, int& A)
 {   cout<<Sir<<endl;
@@ -16,17 +16,19 @@ void Citire(string Sir, int& Z,int& L, int& A)
     cout<<endl;
 }
 
-int main()
-{   int z,l,a;
-    Citire("data calendaristica",z,l,a);
+bool AnCorect(int a){
+   if(a>1999 && a<2100) { cout<<" anul este corect"<<endl;
+                          return true;
+   }
+   else                 { cout<<" anul nu este din secolul nostru"<<endl;
+                          return false;
+                        }
+}
 
-    if(a>1999 && a<2100) cout<<" anul este corect"<<endl;
-    else                 cout<<" anul nu este din secolul nostru"<<endl;
-    if(l>0 && l<13)
+bool LunaZiCorecta(bool B,int L, int z, int a){
+    if(B && (L>0 && L<13))
        { cout<<" luna este corecta"<<endl;
-
-
-         switch (l) {
+         switch (L) {
             case 1:
             case 3:
             case 5:
@@ -34,21 +36,43 @@ int main()
             case 8:
             case 10:
             case 12: if(z>0 && z<32) cout<<" ziua este corecta"<<endl;
-                     else cout<<" ziua este incorecta"<<endl;
+                     else           {cout<<" ziua este incorecta"<<endl;
+                                     return false;
+                     }
                      break;
             case 4:
             case 6:
             case 9:
             case 11: if(z>0 && z<31) cout<<" ziua este corecta"<<endl;
-                     else cout<<" ziua este incorecta"<<endl;
+                     else           {cout<<" ziua este incorecta"<<endl;
+                                     return false;
+                     }
                      break;
             case 2:  if(a%4==0 && (z>0 && z<30))     cout<<" ziua este corecta"<<endl;
                      else if(a%4!=0 &&(z>0 && z<29)) cout<<" ziua este corecta"<<endl;
-                          else cout<<" ziua este incorecta"<<endl;
+                          else                      {cout<<" ziua este incorecta"<<endl;
+                                                      return false;
+                                                    }
                     break;
          }
     }
-    else   cout<<" luna nu este buna"<<endl;
+    else   {if(!B) ;
+            else   {cout<<" luna nu este buna"<<endl;
+                    return false;
+            }
+
+    }
+    return true;
+
+
+}
+
+int main()
+{   int z,L,a;
+    Citire("data calendaristica",z,L,a);
+    bool B=AnCorect(a);            //B=false atunci ceva e incorect !!!
+    B=LunaZiCorecta(B,L,z,a);
+    if(!B) cout<<"data incorecta"<<endl;
     cout << "Program terminat" << endl;
     return 0;
 }

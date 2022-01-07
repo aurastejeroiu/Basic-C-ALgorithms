@@ -4,20 +4,17 @@ using namespace std;
 
 
 int main()
-{   int x,y,z;
-    cout<<"da ziua da 1 ianuarie:";
+{   int n,y,z;
+    string sapt[]={"duminica","luni","marti","miercuri","joi","vineri","sambata"};
+    cout<<"da pozitia in saptamana a zilei de 1 ianuarie:";
     cin >>z;
     cout<<"da numar de zile:";
-    cin >>x;
-    cout<<endl<<x<<endl;
-    y=(z+x-1)%7;
+    cin >>n;
+    cout<<endl<<n<<endl;
+    ///cout<<z+n<<endl;
+    y=(z-1+n)%7;          //se aduna la z-1, nr de ordine al zilei din an
+                          //unde n este nr de ordine al zilei de 1 ian din cadrul saptamanii
     cout<<y<<endl;
-    if(y==1)cout<<"luni";
-    if(y==2)cout<<"marti";
-    if(y==3)cout<<"miercuri";
-    if(y==4)cout<<"joi";
-    if(y==5)cout<<"vineri";
-    if(y==6)cout<<"sambata";
-    if(y==0)cout<<"duminica";
+    cout<<sapt[y];
     return 0;
 }
