@@ -2,14 +2,12 @@
 
 using namespace std;
 
-int Prime(long n)
+int Prime(long n)               //cea mai eficienta metoda de primalitate
 {  if(n<2) return 0;
-   long d=2;
-   while(d*d<=n && n%d!=0)
-        if(d==2) d=3;
-        else     d+=2;
-   if(d*d>n) return 1;
-             return 0;
+   if(n>2 && n%2==0) return 0;
+   for(int d=3;d*d<=n;d=d+2)   //pentru n=2,3,5,7 nu se intra in ciclu
+      if(n%d==0) return 0;
+   return 1;
 }
 
 long Y(long n)
@@ -20,7 +18,9 @@ long Y(long n)
 int main()
 {  long i,C=0;
    for(i=1;i<=90; i++)
-     if(Prime(Y(i))) C++;
+     if(Prime(Y(i))) {C++;
+                      cout<<C<<"."<<Y(i)<<endl;
+     }
    cout << "exista "<<C<<" numere prime "<< endl;
    return 0;
 }
