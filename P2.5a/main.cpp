@@ -1,6 +1,20 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+/*
+long CNK(long n, long k){
+    if(k>n)          return 0;
+    if(k==0 || n==k) return 1;
+    /*else           return CNK(n-1,k-1)+CNK(n-1,k);
+}
+*/
+
+long CNK(long n, long k){
+    if(k>n)          return 0;
+    if(k==0 || n==k) return 1;
+    /*else*/         return CNK(n-1,k-1)*n/k;
+}
+
 
 void TrPascal(int m, long P[][30]){
    for(int n=0;n<=m;n++)               ///initializare matrice,
@@ -9,14 +23,14 @@ void TrPascal(int m, long P[][30]){
 
    for(int n=0;n<=m;n++)               ///creere trunghi Pascal
      for(int k=0;k<=n;k++)
-        if(k==0 || n==k) P[n][k]=1;
-        else             P[n][k]=P[n-1][k-1]+P[n-1][k];///creare element P[n][k]
+        P[n][k]=CNK(n,k);               ///creare element P[n][k]
 }
 
 void Afisare(int m, long P[][30]){
     for(int n=0;n<=m;n++)
-    { for(int k=0;k<=n;k++)
-         cout<<setw(7)<<P[n][k];
+    { cout<<setw(2)<<n<<".  1";
+      for(int k=1;k<=n;k++)
+         cout<<setw(8)<<P[n][k];
       cout<<endl;
     }
 }

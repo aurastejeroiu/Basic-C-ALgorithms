@@ -1,15 +1,15 @@
 #include <iostream>
-
 using namespace std;
 
 void DivN(long n, long d){
   if(d*d>n) {cout<<"1,"<<n<<endl;
-             return;
-            }
-  if(n%d==0)
-  if(n/d==d) {cout<<d<<","; return DivN(n,d+1);}
-  else       {cout<<d<<","<<n/d<<","; return DivN(n,d+1);}
-  return DivN(n,d+1);
+             }
+  else
+   {  if(n%d==0)
+         if(n/d==d) {cout<<d<<",";           DivN(n,d+1);}
+         else       {cout<<d<<","<<n/d<<","; DivN(n,++d);}
+      else DivN(n,d+1);
+   }
 }
 
 int main()
