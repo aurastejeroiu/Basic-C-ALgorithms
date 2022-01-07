@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1553942864 source:d:\cioban\admitere\2018\cpp\heron\main.cpp
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+	<math.h>
+
+1553942864 source:d:\cioban\admitere\2019\cpp\heron\main.cpp
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+	<math.h>
+
