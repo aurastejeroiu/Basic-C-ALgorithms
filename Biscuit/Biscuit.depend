@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1549636213 source:d:\cioban\admitere\2018\cpp\biscuit\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<cstring>
+

@@ -11,7 +11,7 @@ void Cifre(long n,int VF[10])
 
   while(n>0)
   {Uc=n%10;
-   VF[Uc]=VF[Uc]+1;// VF[Uc] ++;p pozitia cifrei Uc se aduna 1
+   VF[Uc]=VF[Uc]+1;// VF[Uc] ++;pe pozitia cifrei Uc se aduna 1
    n=n/10;
   }
 
