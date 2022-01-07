@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1527201512 source:d:\vasile\admitere\2018\cpp\radicalung\main.cpp
+	<iostream>
+	<string.h >
+	<math.h >
+
+1527658384 source:d:\cioban\admitere\2018\cpp\radicalung\main.cpp
+	<iostream>
+	<string.h >
+	<math.h >
+
+1527658384 source:d:\cioban\admitere\2019\cpp\radicalung\main.cpp
+	<iostream>
+	<string.h >
+	<math.h >
+
