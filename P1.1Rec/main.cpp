@@ -8,8 +8,8 @@ using namespace std;
 ///          - se calculeaza la fiecare pas de inmultire restul;
 ///          - practic se inmultesc resturile modulo k.
 
-long long AfisRest(long long i, long long j, long long k){
-    if(j>0) return ((i%k)*AfisRest(i,j-1,k)) % k;       ///recursiv, se autoapeleaza functia cat timp j>0
+long long Rest(long long i, long long j, long long k){
+    if(j>0) return ((i%k)*Rest(i,j-1,k)) % k;       ///recursiv, se autoapeleaza functia cat timp j>0
             return 1;                                   ///la final se inlocuieste cu 1, in sirul de produse.
 
 }
@@ -22,7 +22,7 @@ void CitireDate(long long &i, long long &j, long long &k){
 
 int main()
 {   long long  i,j,k;
-    CitireDate(i,j,k);
-    cout    << AfisRest(i,j,k);
+    CitireDate (i,j,k);
+    cout       << Rest(i,j,k);
     return 0;
 }

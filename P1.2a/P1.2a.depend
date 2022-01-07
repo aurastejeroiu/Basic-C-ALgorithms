@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1463830112 source:d:\cioban\perfectionare\elevi\popmihai\p1.2a\main.cpp
+	<iostream>
+	<iomanip>
+
+1478540778 source:d:\cioban\admitere\2016\cpp\p1.2a\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
+1512125240 source:d:\cioban\admitere\2018\cpp\p1.2a\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
