@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1527699005 source:d:\cioban\admitere\2018\cpp\maxdinprogresii\main.cpp
+	<iostream>
+	<climits>
+	<fstream>
+

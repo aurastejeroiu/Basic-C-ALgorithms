@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1498909425 source:d:\cioban\admitere\2016\cpp\labirint\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<conio.h>
+
+1499429341 source:d:\cioban\admitere\2017\cpp\labirint\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<conio.h>
+
+1547741644 source:d:\cioban\admitere\2018\cpp\labirint\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<conio.h>
+
