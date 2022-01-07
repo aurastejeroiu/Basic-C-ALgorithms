@@ -16,6 +16,7 @@ void CreMat(int n, int A[10][10])
   for(i=1;i<=n;i++)
     for(j=1;j<=n;j++)
        A[i][j]=0;
+
   for(i=1;i<=n/2+1;i++)
   {
       for(j=i;j<=n-i+1;j++)         //pe linie de la stanga la dreapta
