@@ -1,0 +1,8 @@
+ for (i=0; i< a.lung;i++)
+        for (j=0; j< b.lung;j++)
+           {cif[i+j]=cif[i+j]+a.cif[i]*b.cif[j];
+            cif[i+j]=cif[i+j] % 10;
+            Transport =cif[i+j] / 10;
+            cif[i+j+1]+=Transport;  		//aduna transportul pozitiei urmatoare
+           
+           }
