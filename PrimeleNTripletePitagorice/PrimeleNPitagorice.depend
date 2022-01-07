@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1488991948 source:d:\cioban\admitere\daniel\primelenpitagorice\main.cpp
+	<iostream>
+	<math.h>
+
+1494311893 source:d:\cioban\admitere\daniel\primelentripletepitagorice\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
+1504506809 source:d:\cioban\admitere\2017\cpp\primelentripletepitagorice\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
+1504506809 source:d:\cioban\admitere\2018\cpp\primelentripletepitagorice\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
+1504510409 source:d:\cioban\admitere\2019\cpp\primelentripletepitagorice\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+

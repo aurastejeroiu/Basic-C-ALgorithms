@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1548088986 source:d:\cioban\admitere\2018\cpp\parc\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<conio.h>
+

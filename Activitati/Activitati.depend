@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1528904776 source:d:\cioban\admitere\2018\cpp\activitati\main.cpp
+	<iostream>
+	<fstream>
+	<values.h>
+
+1528908892 source:d:\cioban\admitere\2019\cpp\activitati\main.cpp
+	<iostream>
+	<fstream>
+	<values.h>
+
