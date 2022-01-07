@@ -2,7 +2,6 @@
 #include <conio.h>
 
 using namespace std;
-
 struct Polinom{
     int  grad;                          /// Polinom P => P.grad si P.C[i]
     long C[100];
@@ -10,7 +9,6 @@ struct Polinom{
 
 void CitPol(Polinom &P){
   cout<<"da grad:"; cin>>P.grad;
-
   for (int i=0; i<=P.grad; i++){
     cout<<"coef["<<i<<"]=";
     cin >>P.C[i];
@@ -19,25 +17,23 @@ void CitPol(Polinom &P){
 
 void Produs(Polinom P, Polinom Q,  Polinom &R){
     R.grad=P.grad + Q.grad;
-    
     for(int i=0;i<=R.grad;i++) R.C[i]=0; /// initializare produs
 
     for(int i=0;i<=P.grad;i++)
       for(int j=0;j<=Q.grad;j++)
-        R.C[i+j] += (P.C[i]) * (Q.C[j]);
+        R.C[i+j]+=(P.C[i]) * (Q.C[j]);
 }
 
 void Suma(Polinom P, Polinom Q, Polinom &S){
-   
    S.grad =(P.grad >= Q.grad ? P.grad : Q.grad);
    int Min=(P.grad <= Q.grad ? P.grad : Q.grad);
 
    for(int i=0;i<=Min;i++)
      S.C[i]=P.C[i]+Q.C[i];
-
-   for(int i=Min+1;i<=P.grad;i++)        ///numai unul din cele 2 cicluri care urmeaza se executa
+                                ///numai unul din cele 2 cicluri care urmeaza se executa
+   for(int i=Min+1;i<=P.grad;i++)
       S.C[i]=P.C[i];
-   for(int i=Min+1;i<=Q.grad;i++)        ///numai unul din cele 2 cicluri care urmeaza se executa
+   for(int i=Min+1;i<=Q.grad;i++)
       S.C[i]=Q.C[i];
 }
 
@@ -49,15 +45,18 @@ void Scalar(int a, Polinom P, Polinom &R ){/// R=a*P
 
 void AfisPol(Polinom G){
     cout<<endl;
-    cout<<G.C[0];
+    if(G.C[0]!=0) cout<<G.C[0];     ///se afiseaza doar daca coef[0] e <>0
     for(int i=1;i<=G.grad;i++)
-        cout<<"+"<<G.C[i]<<"X^"<<i;
+        if(G.C[i]!=0){              ///se afiseaza doar daca coef[i] e <>0
+            if(G.C[i]>0) cout<<"+"; ///daca coef[i]>0 se afiseaza semnul "+"
+            cout<<G.C[i]<<"X^"<<i;  ///apoi coef. (semnul - se afiseaza la coef nagativ
+        }
     cout<<endl;
 }
 
 void Compus(Polinom P, Polinom Q, Polinom &PQ){
     Polinom R,A;                ///in A se vor retine puterile lui Q
-    PQ.C[0]=P.C[0];             ///in R se retine P.c[i]*Q[(x)^i
+    PQ.C[0]=P.C[0];             ///in R se retine P.c[i]*Q[(x)]^i
     PQ.grad=0;
     A=Q;
     for(int i=1;i<=P.grad;i++){

@@ -11,39 +11,38 @@ void CitValFunc(int &m,int F[],int &n)  //m= card(Dom) , n=card(CoDom)
   for(int i=1;i<=m;i++)
   { int aux;
     cout<<"f["<<i<<"]=";
-    cin >>aux;
-    while(aux<1 || aux>n)
-    {  cout<<" da valori intre 1 si " <<n<<endl;
-       cout<<"f["<<i<<"]=";
-       cin >>aux;
-    }
-    F[i]=aux;
+    cin >>F[i];
   }
 }
 
-int Injectiva(int m, int F[], int n)
-{
-    if(m>n) return 0;
-    for(int i=1;i<=m-1;i++)
+bool EsteFunctie(int m,int F[], int n){
+  for(int i=1;i<=m;i++)
+     if(F[i]<0 || F[i]>n) return false;
+  return true;
+}
+
+bool Injectiva(int m, int F[], int n)
+{   if(!EsteFunctie(m,F,n)) return false;
+    if(m>n) return false;
+    for(int i=1;i<m;i++)
         for(int j=i+1; j<=m;j++)
-          if(F[i]==F[j]) return 0;
-    return 1;
+          if(F[i]==F[j]) return false;
+    return true;
 
 }
 
-int Exista(int m, int F[], int val)
-{  int i=1;
-   while (i<=m && F[i]!=val) i++;
-   if(i>m) return 0;
-   else    return 1;
-
+bool Exista(int m, int F[], int val)
+{  for(int i=1;i<=m; i++)
+     if(val==F[i]) return true;
+   return false;
 }
-int Surjectiva(int m, int F[], int n)
-{
-    if(m<n) return 0;
+
+bool Surjectiva(int m, int F[], int n)
+{   if(!EsteFunctie(m,F,n)) return false;
+    if(m<n) return false;
     for(int i=1; i<=n;i++)
-        if(!Exista(m,F,i)) return 0;
-    return 1;
+        if(!Exista(m,F,i)) return false;
+    return true;
 }
 
 void AfisF(int m, int F[])
