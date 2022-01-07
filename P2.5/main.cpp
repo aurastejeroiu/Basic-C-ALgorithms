@@ -2,36 +2,24 @@
 #include <iomanip>
 using namespace std;
 
-void TrPascal(int m, long P[][30]){
-   for(int n=0;n<=m;n++)               ///initializare matrice,
-     for(int k=0;k<=m;k++)
-        P[n][k]=0;
-
-   for(int n=0;n<=m;n++)               ///creere trunghi Pascal
-     for(int k=0;k<=n;k++)
-        if(k==0 || n==k) P[n][k]=1;
-        else             P[n][k]=P[n-1][k-1]+P[n-1][k];///creare element P[n][k]
-}
-
-void Afisare(int m, long P[][30]){
-    for(int n=0;n<=m;n++)
-    { for(int k=0;k<=n;k++)
-         cout<<setw(7)<<P[n][k];
-      cout<<endl;
-    }
-}
-void Citire(int &m){
-        cout <<"da dim Triunghiului:";
-        cin  >>m;
-}
-
 int main()
-{   int     m;
-    long    P[30][30];
-    Citire(m);
-    TrPascal(m,P);
-    Afisare (m,P);
-    cout     <<"Program terminat:";
+{   int m,k,n,M[20][20];
+    cout <<"da dim Triunghiului:";
+    cin  >>n;
+    for(m=0;m<=n;m++)               //initializare matrice
+        for(k=0;k<=n;k++)
+           M[m][k]=0;
+    for(m=0;m<=n;m++) M[m][0]=1;    //initializare prima coloana cu 1
+                                    //creare triunghi Pascal
+    for(m=1;m<=n;m++)
+        for(k=1;k<=n;k++)
+           M[m][k]=M[m-1][k-1]+M[m-1][k];
+                                    //afisare
+    for(m=0;m<=n;m++)               //initializare matrice
+        {for(k=0;k<=n;k++)
+           if(M[m][k]) cout<<setw(5)<<M[m][k];
+         cout<<endl;
+        }
+    cout << "Hello world!" << endl;
     return 0;
 }
-
