@@ -10,13 +10,19 @@ void CreV (int n, int V[]){
     while(i<=n)
     {   j=2;                ///j pentru divizori
         V[i++]=k;
+        int U=0;
         while(i<=n && j<=k/2){
                 if(k%j==0)
-                {   V[i]=j;
-                    i++;
+                {   V[i++]=j;
+                    if(U==0) U=k/j;
                 }
                 j++;
             }
+        j=2;
+        while(i<=n && j<=U){
+            V[i++]=U;
+            j++;
+        }
         k++;
     }
 }

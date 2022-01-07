@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1448052214 source:d:\cioban\perfectionare\admitere\2015\cpp\p2.84\main.cpp
+	<iostream>
+	<iomanip>
+	<cmath>
+
