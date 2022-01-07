@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1548263423 source:d:\cioban\admitere\2018\cpp\enclave\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+

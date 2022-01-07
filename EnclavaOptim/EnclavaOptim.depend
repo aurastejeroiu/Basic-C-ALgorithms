@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1549025883 source:d:\cioban\admitere\2018\cpp\enclavaoptim\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+

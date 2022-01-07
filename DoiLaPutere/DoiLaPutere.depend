@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1524042509 source:d:\vasile\admitere\2018\cpp\doilaputere\main.c
+	<stdio.h>
+	<stdlib.h>
+
