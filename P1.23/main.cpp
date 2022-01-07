@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-//solutiile sistemului y<=x*x si y>= 2*x*x-16
+///solutiile intregi ale sistemului y<=x*x si y>= 2*x*x-16
 int main()
 {   int x,y,Cont=0;
     for(x=-4;x<=4;x++)

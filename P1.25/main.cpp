@@ -5,7 +5,7 @@ using namespace std;
 /* Enunt:...
 
 */
-int Prim(long n, long d)
+int Prim(long n, long d) //d=2 la apelul primar
 { if(n<2)    return 0;
   if(d*d>n)  return 1;
   if(n%d==0) return 0;

@@ -2,13 +2,28 @@
 
 using namespace std;
 
-int main()
-{ int cont=0;
-  for(int x=-4;x<=4;x++)
-    for(int y=-16;y<=16;y++)
-      if(y<=x*x && y>=(2*x*x-16) )
-        cout<<++cont<<". "<<x<<" "<<y<<endl;
+long CNK(long n, long k)
+{ if(n==k || k==0) return 1;
+  if(n<k)          return 0;
+  return n*CNK(n-1,k-1)/k;
+}
 
-    cout << "Program terminat" << endl;
+float SumInv(long k)
+{ float S=0;
+  for (float i=1.0; i<=k;i++)
+    S=S+1.0/i;
+  return S;
+}
+
+int main()
+{ long n,k;
+  cout<<"da n:";
+  cin >>n;
+  float S=0;
+  for (k=1;k<=n;k++)
+    S=S+CNK(n,k)*SumInv(k);
+  cout<<endl<<S;
+
+
     return 0;
 }

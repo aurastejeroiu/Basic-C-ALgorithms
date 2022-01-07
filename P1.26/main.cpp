@@ -9,7 +9,7 @@ void AfisSume(long n)
         incep=i*(i-1)+1;
         for(j=0;j<i;j++)
             { if(j<i-1) cout<<incep+2*j<<"+";
-              else      cout<<incep+2*j;   //sa nu se mai afiseze + la sfarsit
+              else      cout<<incep+2*j;   ///sa nu se mai afiseze + la sfarsit
             }
         cout<<endl;
     }

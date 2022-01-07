@@ -2,8 +2,9 @@
 
 using namespace std;
 
-int main()
+int main()              //a/b si c/d sa aiba acelasi semn
 {  long a,b,c,d;
+   cout<<"numitorii sa fie pozitivi\n";
    cout<<"da a:";
    cin >>a;
    cout<<"da b:";
@@ -13,6 +14,7 @@ int main()
    cout<<"da d:";
    cin >>d;
    if(a*d>b*c) cout<<a<<"/"<<b<<" > "<<c<<"/"<<d;
-   else        cout<<c<<"/"<<d<<" > "<<a<<"/"<<b;
+   else  if(a*d==b*c) cout<<a<<"/"<<b<<" = "<<c<<"/"<<d;
+         else cout<<c<<"/"<<d<<" > "<<a<<"/"<<b;
    return 0;
 }
