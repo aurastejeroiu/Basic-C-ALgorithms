@@ -4,11 +4,13 @@
    doi vectori incepand cu pozitiile I0, respectiv J0 si M este cel mai mare
    posibil. In cazul ca nu exista pozitii cu aceasta proprietate, I0 si J0 vor
    avea  valoarea n+1, rescpectiv m+1.
-   Cu alte cuvinte se cauta cele mai lungi secvente consecutive care
+ 
+  Cu alte cuvinte se cauta cele mai lungi secvente consecutive care
    coincid din cei 2 vectori
-   X={11,21,31,41,51,61,71,81,6,301,41}; n=11
+ 
+  X={11,21,31,41,51,61,71,81,6,301,41}; n=11
    Y={20,81,6,7,8,81,6,301,40}; m=9
-   => I0=8, J0=7 iar m=3
+   => I0=8, J0=7 iar lung=3
    O secventa consecutiva de numere o vom nota cu (i,j), perechi de indici
    de inceput si sfarsit
 */
@@ -66,7 +68,7 @@ void Identica(int n, int X[], int m, int Y[], int&I0, int&J0, int&M){
 
 int main()
 {  int n=5,m=8;
-   int X[]={0,1,2,4,5,3};
+   int X[]={0,1,2,4,5,6};
    int Y[]={0,4,5,11,13,4,5,6,7};
    int I0=1,J0=1,M;
    //citeste X,Y
