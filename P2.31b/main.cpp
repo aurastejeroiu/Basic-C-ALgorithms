@@ -6,9 +6,9 @@ using namespace std;
 ///
 
 void Schimb (int &a, int &b){
- int aux = a;
-     a   = b;
-     b   = aux;
+     int aux=a;
+           a=b;
+           b=aux;
 }
 void Afisare(int n, int a, int X[]){
     cout<<"elementele aranjate in functie de a:";
@@ -17,23 +17,15 @@ void Afisare(int n, int a, int X[]){
     cout<<endl;
 }
 
-void FataDeA(int n, int a,int x[])
-{ int i,j;
-  i=1;
-  while(i<=n) {
-    if(x[i]>=a)                         ///daca x[i]>=a atunci se cauta de la
-                                        ///el inspre dreapta primul
-        { j=i+1;                        ///numar <a, cu care il interschimb
-          while(j<=n && x[j]>=a) j++;   ///gaseste primul x[j] < a;
-          if(j>n) i=n+1;                ///se termina while dupa i;
-          else {Schimb(x[i],x[j]);      ///x[j] < a si trebuie interschimbat cu x[i]
-                ///Afisare(n,a,x);
-               }
-        }
-    i++;                           	///se trece la urmatoarea val.
-                                        /// a lui i pentru x[i]<a
-  }
-
+void FataDeA(int n, int a,int x[])  ///problema de tip Dijsktra
+{   int i=1,j=1;
+    while(j<=n)
+       { if(x[j]<a)
+            { Schimb(x[j],x[i]);
+              i++;
+            }
+         j++;
+       }
 }
 
 void Citire(int&n, int&a,int X[]){

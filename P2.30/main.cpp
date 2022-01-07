@@ -4,19 +4,15 @@
 
 using namespace std;
 /* Se dau a din N si un sir X de n elemente intregi.
-   Sa se determine indicele i (cel maic) pentru care X[i] este cel mai apropiat de a
+   Sa se determine indicele i (cel mic) pentru care X[i] este cel mai apropiat de a
 */
 
-int GasireIndice(int n, int a, int X[], int&I)
-{   int Dif=abs(X[1]-a);        //calcul modul
-    I=1;                        //initializare I cu 1
-    for (int i=2;i<=n;i++)      //se parcurge sirul X de la 2 la n
-    { int Modul=abs(X[i]-a);    //calcul modul
-        if(Modul<Dif)           //trebuie eliminat aflat indicele cu diferenta |x[i]-a| cea mai mica
-        {  Dif  =Modul;
-           I    =i;
-        }
-    }
+void GasireIndice(int n, int a, int X[], int&IMic)
+{   IMic=1;                     ///initializare IMic cu 1
+    for (int i=2;i<=n;i++)      ///se parcurge sirul X de la 2 la n
+       if(abs(X[i]-a)<abs(X[IMic]-a)) IMic=i;
+
+
 }
 void Citire(int&n, int&a,int X[]){
     cout<<"cate numere dai:";
@@ -29,8 +25,8 @@ void Citire(int&n, int&a,int X[]){
     cin  >> a;
 
 }
-void Afisare(int a, int Val, int indice){
-    cout<<"numerul cel mai apropiat de "<<a<<" este "<<Val<<" pe pozitia:"<<indice;
+void Afisare(int a, int X[], int indice){
+    cout<<"numarul cel mai apropiat de "<<a<<" este "<<X[indice]<<" pe pozitia:"<<indice;
     cout<<endl;
 }
 
@@ -39,6 +35,6 @@ int main(){
     int n,a,Ind;
     Citire      (n,a,X);        //apel citire date
     GasireIndice(n,a,X,Ind);    //Aflare cel mai mic indice
-    Afisare     (a,X[Ind],Ind); //Afisare pozitia
+    Afisare     (a,X,Ind); //Afisare pozitia
     return 0;
 }
