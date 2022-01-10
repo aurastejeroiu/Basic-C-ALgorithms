@@ -1,2 +1,2 @@
 # CPP
-#C/C++ algorithms 
+C/C++ algorithms 
