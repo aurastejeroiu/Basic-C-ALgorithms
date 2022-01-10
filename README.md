@@ -1,2 +1,2 @@
 # CPP
-#C/C++ aqlgorithms 
+#C/C++ algorithms 
